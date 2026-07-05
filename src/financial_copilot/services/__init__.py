@@ -1,0 +1,2 @@
+"""Azure service adapters."""
+

@@ -1,0 +1,2 @@
+[console_scripts]
+financial-copilot = financial_copilot.main:main
