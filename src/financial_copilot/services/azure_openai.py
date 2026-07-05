@@ -1,5 +1,15 @@
 from __future__ import annotations
 
+import json
+
+try:
+    from azure.identity import DefaultAzureCredential, get_bearer_token_provider
+    from openai import OpenAI
+except ImportError:  # pragma: no cover - optional until dependencies are installed
+    OpenAI = None
+    DefaultAzureCredential = None
+    get_bearer_token_provider = None
+
 from financial_copilot.config import Settings
 from financial_copilot.state import ResearchState
 
@@ -9,12 +19,134 @@ class AzureOpenAIResearchWriter:
         self.settings = settings
 
     def draft_report(self, state: ResearchState) -> str:
-        """Return a deterministic draft until the live Azure OpenAI call is wired."""
+        if self.settings.azure_openai_endpoint:
+            try:
+                return self._draft_with_azure_openai(state)
+            except Exception as exc:
+                return self._fallback_report(
+                    state,
+                    note=(
+                        "Azure OpenAI call failed, so a deterministic fallback report was used. "
+                        f"Error: {type(exc).__name__}: {exc}"
+                    ),
+                )
+
+        return self._fallback_report(
+            state,
+            note="Azure OpenAI is not configured, so a deterministic fallback report was used.",
+        )
+
+    def _build_client(self):
+        if OpenAI is None:
+            raise RuntimeError(
+                "OpenAI/Azure Identity dependencies are unavailable. Install project dependencies first."
+            )
+
+        endpoint = self.settings.azure_openai_endpoint
+        base_url = f"{endpoint.rstrip('/')}/openai/v1/"
+        if self.settings.azure_openai_api_key:
+            return OpenAI(
+                api_key=self.settings.azure_openai_api_key,
+                base_url=base_url,
+            )
+
+        if DefaultAzureCredential is None or get_bearer_token_provider is None:
+            raise RuntimeError("Azure Identity support is unavailable.")
+
+        token_provider = get_bearer_token_provider(
+            DefaultAzureCredential(),
+            "https://cognitiveservices.azure.com/.default"
+        )
+        return OpenAI(
+            api_key=token_provider,
+            base_url=base_url,
+        )
+
+    def _draft_with_azure_openai(self, state: ResearchState) -> str:
+        client = self._build_client()
+        payload = {
+            "ticker": state.get("ticker"),
+            "query": state.get("query"),
+            "financial_data": state.get("financial_data", {}),
+            "filings_context": state.get("filings_context", {}),
+            "retrieved_evidence": state.get("retrieved_evidence", []),
+            "warnings": state.get("warnings", []),
+        }
+
+        response = client.chat.completions.create(
+            model=self.settings.azure_openai_model,
+            messages=[
+                {
+                    "role": "system",
+                    "content": (
+                        "You are a financial research assistant. Produce a concise markdown report "
+                        "with sections for Overview, Key Metrics, Evidence, Risks, and Recommendation. "
+                        "Use only provided facts and clearly mention uncertainty."
+                    ),
+                },
+                {
+                    "role": "user",
+                    "content": "Create a report from this JSON payload:\n"
+                    + json.dumps(payload, default=str),
+                },
+            ],
+            max_completion_tokens=self.settings.azure_openai_max_completion_tokens,
+        )
+        text = self._extract_response_text(response)
+        if text:
+            return text
+
+        finish_reason = None
+        if getattr(response, "choices", None):
+            finish_reason = getattr(response.choices[0], "finish_reason", None)
+        usage = getattr(response, "usage", None)
+        usage_text = f"{usage}" if usage is not None else "unknown"
+
+        return self._fallback_report(
+            state,
+            note=(
+                "Azure OpenAI returned an empty response, so a deterministic fallback report was used. "
+                f"finish_reason={finish_reason}, usage={usage_text}. "
+                "Try increasing AZURE_OPENAI_MAX_COMPLETION_TOKENS if this keeps happening."
+            ),
+        )
+
+    def _extract_response_text(self, response) -> str:
+        choices = getattr(response, "choices", None) or []
+        if not choices:
+            return ""
+
+        message = getattr(choices[0], "message", None)
+        if message is None:
+            return ""
+
+        content = getattr(message, "content", None)
+        if isinstance(content, str):
+            return content.strip()
+        if isinstance(content, list):
+            parts: list[str] = []
+            for item in content:
+                if isinstance(item, str):
+                    parts.append(item)
+                    continue
+                text_value = getattr(item, "text", None)
+                if isinstance(text_value, str):
+                    parts.append(text_value)
+                    continue
+                if isinstance(item, dict):
+                    dict_text = item.get("text")
+                    if isinstance(dict_text, str):
+                        parts.append(dict_text)
+            return "\n".join(part.strip() for part in parts if part and part.strip())
+        return ""
+
+    def _fallback_report(self, state: ResearchState, *, note: str) -> str:
         ticker = state["ticker"].upper()
         financial_data = state.get("financial_data", {})
         filings_context = state.get("filings_context", {})
         evidence = state.get("retrieved_evidence", [])
         warnings = state.get("warnings", [])
+        metrics = financial_data.get("metrics", {})
 
         report_lines = [
             f"# {ticker} Research Draft",
@@ -25,7 +157,12 @@ class AzureOpenAIResearchWriter:
             "",
             "## Financial Data",
             f"- Data status: {financial_data.get('data_status', 'missing')}",
-            f"- Metrics requested: {', '.join(financial_data.get('metrics_requested', [])) or 'none'}",
+            f"- Company: {metrics.get('company_name') or 'unknown'}",
+            f"- Current price: {metrics.get('current_price')}",
+            f"- Market cap: {metrics.get('market_cap')}",
+            f"- Revenue: {metrics.get('revenue')}",
+            f"- EPS: {metrics.get('eps')}",
+            f"- 1M price change (%): {metrics.get('one_month_price_change_pct')}",
             "",
             "## Filings RAG",
             f"- Blob target: {filings_context.get('blob_target', 'missing')}",
@@ -47,8 +184,8 @@ class AzureOpenAIResearchWriter:
             [
                 "",
                 "## Recommendation Stub",
-                "- Recommendation pending live financial data and real filings retrieval.",
-                "- Next implementation step: wire Azure OpenAI Responses API for final narrative generation.",
+                "- Use this report as a smoke-test artifact until richer SEC ingestion is added.",
+                f"- Note: {note}",
             ]
         )
 
@@ -57,4 +194,3 @@ class AzureOpenAIResearchWriter:
             report_lines.extend(f"- {warning}" for warning in warnings)
 
         return "\n".join(report_lines)
-

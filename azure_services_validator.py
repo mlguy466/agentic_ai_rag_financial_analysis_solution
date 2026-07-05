@@ -203,36 +203,34 @@ def test_key_vault_service() -> tuple[str, str]:
 
 def test_openai_service() -> tuple[str, str]:
     from azure.identity import DefaultAzureCredential, get_bearer_token_provider
-    from openai import AzureOpenAI
+    from openai import OpenAI
 
     endpoint = os.environ["AZURE_OPENAI_ENDPOINT"]
     model = os.environ["AZURE_OPENAI_MODEL"]
     api_key = os.getenv("AZURE_OPENAI_API_KEY", "").strip()
-    api_version = os.getenv("AZURE_OPENAI_API_VERSION", "2024-10-21")
+    base_url = f"{endpoint.rstrip('/')}/openai/v1/"
 
     if api_key:
-        client = AzureOpenAI(
+        client = OpenAI(
             api_key=api_key,
-            api_version=api_version,
-            azure_endpoint=endpoint,
+            base_url=base_url,
         )
         auth_mode = "api_key"
     else:
         token_provider = get_bearer_token_provider(
             DefaultAzureCredential(),
-            "https://cognitiveservices.azure.com/.default",
+            "https://cognitiveservices.azure.com/.default"
         )
-        client = AzureOpenAI(
-            azure_ad_token_provider=token_provider,
-            api_version=api_version,
-            azure_endpoint=endpoint,
+        client = OpenAI(
+            api_key=token_provider,
+            base_url=base_url,
         )
         auth_mode = "default_azure_credential"
 
     response = client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": "Reply with OK"}],
-        max_tokens=5,
+        max_completion_tokens=5,
     )
     message = response.choices[0].message.content if response.choices else "no output"
     return "PASS", f"connected via {auth_mode}; sample response: {message!r}"

@@ -17,6 +17,7 @@ class Settings:
     azure_openai_endpoint: str | None = None
     azure_openai_model: str = "gpt-4o-mini"
     azure_openai_api_key: str | None = None
+    azure_openai_max_completion_tokens: int = 1200
     azure_search_endpoint: str | None = None
     azure_search_index_name: str = "financial-filings"
     azure_search_api_key: str | None = None
@@ -36,6 +37,9 @@ class Settings:
             azure_openai_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
             azure_openai_model=os.getenv("AZURE_OPENAI_MODEL", "gpt-4o-mini"),
             azure_openai_api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+            azure_openai_max_completion_tokens=int(
+                os.getenv("AZURE_OPENAI_MAX_COMPLETION_TOKENS", "1200")
+            ),
             azure_search_endpoint=os.getenv("AZURE_SEARCH_ENDPOINT"),
             azure_search_index_name=os.getenv(
                 "AZURE_SEARCH_INDEX_NAME", "financial-filings"

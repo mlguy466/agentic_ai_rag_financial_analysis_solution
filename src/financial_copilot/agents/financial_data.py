@@ -6,7 +6,7 @@ from financial_copilot.tools.market_data import get_company_snapshot
 
 
 def financial_data_agent(state: ResearchState, settings: Settings) -> ResearchState:
-    del settings  # Financial provider wiring comes next.
+    del settings
 
     ticker = state["ticker"]
     snapshot, warnings = get_company_snapshot(ticker)
@@ -17,4 +17,3 @@ def financial_data_agent(state: ResearchState, settings: Settings) -> ResearchSt
         "completed_steps": ["financial_data_agent"],
         "warnings": warnings,
     }
-

@@ -1,38 +1,110 @@
 from __future__ import annotations
 
+import json
+
 from financial_copilot.config import Settings
 from financial_copilot.services.blob_storage import BlobStorageService
 from financial_copilot.services.search import SearchIndexService
 from financial_copilot.state import EvidenceChunk, ResearchState
 
 
+def _build_seed_content(state: ResearchState) -> str:
+    financial_data = state.get("financial_data", {})
+    metrics = financial_data.get("metrics", {})
+    summary_lines = [
+        f"Ticker: {state['ticker'].upper()}",
+        f"Company: {metrics.get('company_name')}",
+        f"Sector: {metrics.get('sector')}",
+        f"Current price: {metrics.get('current_price')}",
+        f"Market cap: {metrics.get('market_cap')}",
+        f"Revenue: {metrics.get('revenue')}",
+        f"EPS: {metrics.get('eps')}",
+        f"Trailing PE: {metrics.get('trailing_pe')}",
+        f"Debt to equity: {metrics.get('debt_to_equity')}",
+        f"ROE: {metrics.get('roe')}",
+        "",
+        "Business Summary:",
+        financial_data.get("business_summary") or "No business summary returned.",
+        "",
+        "Structured JSON:",
+        json.dumps(financial_data, default=str),
+    ]
+    return "\n".join(summary_lines)
+
+
 def filings_rag_agent(state: ResearchState, settings: Settings) -> ResearchState:
     ticker = state["ticker"].upper()
     blob_service = BlobStorageService(settings)
     search_service = SearchIndexService(settings)
+    warnings: list[str] = []
+    evidence: list[EvidenceChunk] = []
+    ingestion_status = "unconfigured"
 
-    evidence: list[EvidenceChunk] = [
-        {
-            "source": f"sec://{ticker}/latest-10k",
-            "snippet": "Placeholder evidence. Wire SEC ingestion and chunk indexing next.",
-            "relevance": "Provides a stub filing citation for the report layer.",
-        }
-    ]
+    seed_content = _build_seed_content(state)
+    blob_target = blob_service.describe_target()
+    search_target = search_service.describe_target()
+
+    if settings.azure_storage_account_url and settings.azure_search_endpoint:
+        try:
+            blob_service.ensure_container()
+            blob_url = blob_service.upload_text_blob(
+                blob_name=f"{ticker.lower()}-research-seed.txt",
+                text=seed_content,
+            )
+            search_service.ensure_index()
+            search_service.upload_documents(
+                [
+                    {
+                        "id": f"{ticker.lower()}-research-seed",
+                        "ticker": ticker,
+                        "source": blob_url,
+                        "content": seed_content,
+                    }
+                ]
+            )
+            search_results = search_service.search(state.get("query", ticker), top=3)
+            evidence = [
+                {
+                    "source": item.get("source", f"search://{ticker}"),
+                    "snippet": str(item.get("content", ""))[:300],
+                    "relevance": "Retrieved from Azure AI Search over the uploaded seed document.",
+                }
+                for item in search_results
+            ]
+            blob_target = blob_url
+            ingestion_status = "uploaded_and_indexed"
+            if not evidence:
+                warnings.append(
+                    "Azure AI Search was reachable, but no evidence was returned for the current query."
+                )
+        except Exception as exc:
+            ingestion_status = "error"
+            warnings.append(f"Live Blob/Search path failed: {exc}")
+    else:
+        if not settings.azure_search_endpoint:
+            warnings.append("Azure AI Search is not configured yet.")
+        if not settings.azure_storage_account_url:
+            warnings.append("Azure Blob Storage is not configured yet.")
+
+    if not evidence:
+        evidence = [
+            {
+                "source": f"seed://{ticker}/market-data",
+                "snippet": seed_content[:300],
+                "relevance": "Local fallback evidence built from live yfinance metrics.",
+            }
+        ]
+        if ingestion_status == "unconfigured":
+            ingestion_status = "local_fallback"
 
     filings_context = {
         "ticker": ticker,
-        "blob_target": blob_service.describe_target(),
-        "search_target": search_service.describe_target(),
+        "blob_target": blob_target,
+        "search_target": search_target,
         "search_auth_mode": search_service.describe_auth_mode(),
-        "ingestion_status": "placeholder",
-        "next_step": "Fetch SEC filing text, upload raw text to Blob Storage, then index chunks in Azure AI Search.",
+        "ingestion_status": ingestion_status,
+        "next_step": "Replace the seed document path with real SEC filing ingestion and chunking.",
     }
-
-    warnings: list[str] = []
-    if not settings.azure_search_endpoint:
-        warnings.append("Azure AI Search is not configured yet.")
-    if not settings.azure_storage_account_url:
-        warnings.append("Azure Blob Storage is not configured yet.")
 
     return {
         "filings_context": filings_context,
