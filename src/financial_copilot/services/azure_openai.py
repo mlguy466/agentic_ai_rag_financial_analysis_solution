@@ -62,16 +62,44 @@ class AzureOpenAIResearchWriter:
             base_url=base_url,
         )
 
+    def _build_compact_payload(self, state: ResearchState) -> dict:
+        """Build a compact payload by filtering nulls and truncating content."""
+        financial_data = state.get("financial_data", {})
+        metrics = financial_data.get("metrics", {})
+        
+        # Filter out null/None metric values to reduce token count
+        filtered_metrics = {k: v for k, v in metrics.items() if v is not None}
+        
+        # Keep only top 3 essential metrics for evidence
+        evidence = state.get("retrieved_evidence", [])
+        compact_evidence = [
+            {
+                "source": item.get("source", "unknown"),
+                "snippet": item.get("snippet", "")[:150],  # Truncate to 150 chars
+                "relevance": item.get("relevance", "")[:50],  # Truncate relevance
+            }
+            for item in evidence[:3]
+        ]
+        
+        # Minimal filings context
+        filings_context = state.get("filings_context", {})
+        compact_filings = {
+            "ingestion_status": filings_context.get("ingestion_status"),
+            "search_auth_mode": filings_context.get("search_auth_mode"),
+        }
+        
+        return {
+            "ticker": state.get("ticker"),
+            "query": state.get("query", ""),
+            "metrics": filtered_metrics,
+            "business_summary": (financial_data.get("business_summary", "") or "")[:200],
+            "evidence": compact_evidence,
+            "ingestion_status": compact_filings.get("ingestion_status"),
+        }
+
     def _draft_with_azure_openai(self, state: ResearchState) -> str:
         client = self._build_client()
-        payload = {
-            "ticker": state.get("ticker"),
-            "query": state.get("query"),
-            "financial_data": state.get("financial_data", {}),
-            "filings_context": state.get("filings_context", {}),
-            "retrieved_evidence": state.get("retrieved_evidence", []),
-            "warnings": state.get("warnings", []),
-        }
+        payload = self._build_compact_payload(state)
 
         response = client.chat.completions.create(
             model=self.settings.azure_openai_model,
@@ -79,15 +107,23 @@ class AzureOpenAIResearchWriter:
                 {
                     "role": "system",
                     "content": (
-                        "You are a financial research assistant. Produce a concise markdown report "
-                        "with sections for Overview, Key Metrics, Evidence, Risks, and Recommendation. "
-                        "Use only provided facts and clearly mention uncertainty."
+                        "You are a financial research assistant. Write a concise markdown report "
+                        "with: Overview, Key Metrics, Evidence Summary, and Brief Recommendation. "
+                        "Use only the provided facts. Keep it brief and factual."
                     ),
                 },
                 {
                     "role": "user",
-                    "content": "Create a report from this JSON payload:\n"
-                    + json.dumps(payload, default=str),
+                    "content": (
+                        f"Generate a research report for {payload['ticker']}:\n\n"
+                        f"Metrics: {json.dumps(payload['metrics'], default=str)}\n\n"
+                        f"Business: {payload['business_summary']}\n\n"
+                        f"Evidence:\n"
+                        + "\n".join(
+                            f"- {e['snippet']}"
+                            for e in payload['evidence']
+                        )
+                    ),
                 },
             ],
             max_completion_tokens=self.settings.azure_openai_max_completion_tokens,
