@@ -95,6 +95,8 @@ class AzureOpenAIResearchWriter:
             "business_summary": (financial_data.get("business_summary", "") or "")[:200],
             "evidence": compact_evidence,
             "ingestion_status": compact_filings.get("ingestion_status"),
+            "analysis": state.get("analysis", {}),
+            "risk_assessment": state.get("risk_assessment", {}),
         }
 
     def _draft_with_azure_openai(self, state: ResearchState) -> str:
@@ -122,6 +124,14 @@ class AzureOpenAIResearchWriter:
                         + "\n".join(
                             f"- {e['snippet']}"
                             for e in payload['evidence']
+                        )
+                        + "\n\nAnalysis:\n"
+                        + "\n".join(
+                            f"- {k}: {v}" for k, v in (payload.get('analysis') or {}).items()
+                        )
+                        + "\n\nRisks:\n"
+                        + "\n".join(
+                            f"- {k}: {v}" for k, v in (payload.get('risk_assessment') or {}).items()
                         )
                     ),
                 },

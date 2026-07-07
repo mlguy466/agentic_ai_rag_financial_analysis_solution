@@ -22,4 +22,6 @@ class ResearchState(TypedDict, total=False):
     retrieved_evidence: Annotated[list[EvidenceChunk], add]
     report_markdown: str
     warnings: Annotated[list[str], add]
+    analysis: dict[str, Any]
+    risk_assessment: dict[str, Any]
 

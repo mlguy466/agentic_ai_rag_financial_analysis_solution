@@ -23,6 +23,7 @@ class Settings:
     azure_search_api_key: str | None = None
     azure_storage_account_url: str | None = None
     azure_storage_container: str = "filings"
+    azure_blob_only_ingestion: bool = False
     azure_key_vault_url: str | None = None
 
     @classmethod
@@ -47,6 +48,7 @@ class Settings:
             azure_search_api_key=os.getenv("AZURE_SEARCH_API_KEY"),
             azure_storage_account_url=os.getenv("AZURE_STORAGE_ACCOUNT_URL"),
             azure_storage_container=os.getenv("AZURE_STORAGE_CONTAINER", "filings"),
+            azure_blob_only_ingestion=os.getenv("AZURE_BLOB_ONLY_INGESTION", "false").lower() in ("1", "true", "yes"),
             azure_key_vault_url=os.getenv("AZURE_KEY_VAULT_URL"),
         )
 

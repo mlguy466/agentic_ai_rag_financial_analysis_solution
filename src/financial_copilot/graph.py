@@ -6,6 +6,8 @@ from typing import Any
 
 from financial_copilot.agents.filings_rag import filings_rag_agent
 from financial_copilot.agents.financial_data import financial_data_agent
+from financial_copilot.agents.metrics_analysis import metrics_analysis_agent
+from financial_copilot.agents.risk_assessment import risk_assessment_agent
 from financial_copilot.agents.reporting import report_agent
 from financial_copilot.agents.supervisor import supervisor_agent
 from financial_copilot.config import Settings
@@ -45,6 +47,8 @@ def run_sequential_workflow(
         supervisor_agent,
         financial_data_agent,
         filings_rag_agent,
+        metrics_analysis_agent,
+        risk_assessment_agent,
         report_agent,
     ]
 
@@ -66,12 +70,20 @@ def build_research_graph(settings: Settings):
     graph.add_node(
         "filings_rag_node", lambda state: filings_rag_agent(state, settings)
     )
+    graph.add_node(
+        "metrics_node", lambda state: metrics_analysis_agent(state, settings)
+    )
+    graph.add_node(
+        "risk_node", lambda state: risk_assessment_agent(state, settings)
+    )
     graph.add_node("report_node", lambda state: report_agent(state, settings))
 
     graph.add_edge(START, "supervisor_node")
     graph.add_edge("supervisor_node", "financial_data_node")
     graph.add_edge("financial_data_node", "filings_rag_node")
-    graph.add_edge("filings_rag_node", "report_node")
+    graph.add_edge("filings_rag_node", "metrics_node")
+    graph.add_edge("metrics_node", "risk_node")
+    graph.add_edge("risk_node", "report_node")
     graph.add_edge("report_node", END)
 
     return graph.compile()

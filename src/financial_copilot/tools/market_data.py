@@ -88,6 +88,74 @@ def get_company_snapshot(ticker: str) -> tuple[dict[str, Any], list[str]]:
             + ", ".join(missing_core_metrics)
         )
 
+        # Try common UAE exchange suffixes if core metrics missing (best-effort)
+        uae_suffixes = [".AD", ".DXB", ".AE", ".ADX"]
+        for suf in uae_suffixes:
+            try:
+                alt_ticker = f"{normalized_ticker}{suf}"
+                alt_stock = yf.Ticker(alt_ticker)
+                alt_info = alt_stock.info or {}
+                if alt_info and (alt_info.get("currentPrice") or alt_info.get("regularMarketPrice") or alt_info.get("longName")):
+                    # rebuild metrics from alt_info
+                    info = alt_info
+                    stock = alt_stock
+                    normalized_ticker = alt_ticker
+                    history = None
+                    try:
+                        history = stock.history(period="1mo", interval="1d")
+                    except Exception:
+                        history = None
+                    price_change_pct = None
+                    if history is not None and not history.empty:
+                        start_close = float(history["Close"].iloc[0])
+                        end_close = float(history["Close"].iloc[-1])
+                        if start_close:
+                            price_change_pct = round(((end_close - start_close) / start_close) * 100, 2)
+
+                    metrics = {
+                        "company_name": info.get("longName") or info.get("shortName"),
+                        "sector": info.get("sector"),
+                        "industry": info.get("industry"),
+                        "currency": info.get("currency"),
+                        "current_price": info.get("currentPrice") or info.get("regularMarketPrice"),
+                        "market_cap": info.get("marketCap"),
+                        "enterprise_value": info.get("enterpriseValue"),
+                        "trailing_pe": info.get("trailingPE"),
+                        "forward_pe": info.get("forwardPE"),
+                        "price_to_book": info.get("priceToBook"),
+                        "revenue": info.get("totalRevenue"),
+                        "ebitda": info.get("ebitda"),
+                        "net_income": info.get("netIncomeToCommon"),
+                        "eps": info.get("trailingEps"),
+                        "free_cashflow": info.get("freeCashflow"),
+                        "operating_cashflow": info.get("operatingCashflow"),
+                        "debt_to_equity": info.get("debtToEquity"),
+                        "current_ratio": info.get("currentRatio"),
+                        "roe": info.get("returnOnEquity"),
+                        "roa": info.get("returnOnAssets"),
+                        "revenue_growth": info.get("revenueGrowth"),
+                        "earnings_growth": info.get("earningsGrowth"),
+                        "gross_margins": info.get("grossMargins"),
+                        "operating_margins": info.get("operatingMargins"),
+                        "profit_margins": info.get("profitMargins"),
+                        "beta": info.get("beta"),
+                        "fifty_two_week_high": info.get("fiftyTwoWeekHigh"),
+                        "fifty_two_week_low": info.get("fiftyTwoWeekLow"),
+                        "one_month_price_change_pct": price_change_pct,
+                    }
+
+                    missing_core_metrics = [
+                        key
+                        for key in ("current_price", "market_cap", "revenue", "eps")
+                        if metrics.get(key) is None
+                    ]
+                    # stop trying suffixes if we have better data
+                    if not missing_core_metrics:
+                        warnings.append(f"Attempted alternate ticker {alt_ticker} for UAE exchanges and found data.")
+                        break
+            except Exception:
+                continue
+
     snapshot = {
         "ticker": normalized_ticker,
         "data_status": "live",

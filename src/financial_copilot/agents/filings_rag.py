@@ -46,32 +46,47 @@ def filings_rag_agent(state: ResearchState, settings: Settings) -> ResearchState
 
     if settings.azure_storage_account_url and settings.azure_search_endpoint:
         try:
+            # Ensure container exists
             blob_service.ensure_container()
-            blob_url = blob_service.upload_text_blob(
-                blob_name=f"{ticker.lower()}-research-seed.txt",
-                text=seed_content,
-            )
+
+            # Chunk the seed content to improve retrieval granularity
+            chunk_size = 800
+            chunks: list[str] = [
+                seed_content[i : i + chunk_size]
+                for i in range(0, len(seed_content), chunk_size)
+            ]
+
+            # Upload each chunk as its own blob and index as separate document
             search_service.ensure_index()
-            search_service.upload_documents(
-                [
+            documents: list[dict] = []
+            blob_urls: list[str] = []
+            for idx, chunk in enumerate(chunks):
+                blob_name = f"{ticker.lower()}-research-seed-{idx}.txt"
+                blob_url = blob_service.upload_text_blob(blob_name=blob_name, text=chunk)
+                blob_urls.append(blob_url)
+                documents.append(
                     {
-                        "id": f"{ticker.lower()}-research-seed",
+                        "id": f"{ticker.lower()}-research-seed-{idx}",
                         "ticker": ticker,
                         "source": blob_url,
-                        "content": seed_content,
+                        "content": chunk,
                     }
-                ]
-            )
+                )
+
+            search_service.upload_documents(documents)
+
+            # Search retrieves top-k chunks
             search_results = search_service.search(state.get("query", ticker), top=3)
             evidence = [
                 {
                     "source": item.get("source", f"search://{ticker}"),
-                    "snippet": str(item.get("content", ""))[:300],
-                    "relevance": "Retrieved from Azure AI Search over the uploaded seed document.",
+                    "snippet": str(item.get("content", ""))[:200],
+                    "relevance": "Retrieved from Azure AI Search over uploaded seed chunks.",
                 }
                 for item in search_results
             ]
-            blob_target = blob_url
+
+            blob_target = ",".join(blob_urls) if blob_urls else blob_target
             ingestion_status = "uploaded_and_indexed"
             if not evidence:
                 warnings.append(

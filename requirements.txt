@@ -7,3 +7,4 @@ openai>=1.51.0
 pydantic>=2.9.0
 python-dotenv>=1.0.1
 yfinance>=0.2.54
+sec-edgar-downloader>=5.0.0
