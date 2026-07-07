@@ -1,0 +1,501 @@
+rank,ticker,company,fortune_url
+1,MMM,3M,https://fortune.com/company/3m/
+2,AOS,A.O. Smith,https://fortune.com/company/a-o-smith/
+3,ABT,Abbott Laboratories,https://fortune.com/company/abbott-laboratories/
+4,ABBV,AbbVie,https://fortune.com/company/abbvie/
+5,ANF,Abercrombie & Fitch,https://fortune.com/company/abercrombie-fitch/
+6,ABM,ABM Industries,https://fortune.com/company/abm-industries/
+7,ASO,Academy Sports and Outdoors,https://fortune.com/company/academy-sports-and-outdoors/
+8,ACHC,Acadia Healthcare,https://fortune.com/company/acadia-healthcare/
+9,ACH,Accendra Health,https://fortune.com/company/owens-minor/
+10,AYI,Acuity,https://fortune.com/company/acuity-brands/
+11,AE,Adams Resources & Energy,https://fortune.com/company/adams-resources-energy/
+12,AHCO,AdaptHealth,https://fortune.com/company/adapthealth/
+13,ADBE,Adobe,https://fortune.com/company/adobe-systems/
+14,ADT,ADT,https://fortune.com/company/adt/
+15,AAP,Advance Auto Parts,https://fortune.com/company/advance-auto-parts/
+16,WMS,Advanced Drainage Systems,https://fortune.com/company/advanced-drainage-systems/
+17,AMD,Advanced Micro Devices,https://fortune.com/company/advanced-micro-devices/
+18,ADV,Advantage Solutions,https://fortune.com/company/advantage-solutions/
+19,ACM,AECOM,https://fortune.com/company/aecom/
+20,AES,AES,https://fortune.com/company/aes/
+21,AFL,Aflac,https://fortune.com/company/aflac/
+22,AGCO,AGCO,https://fortune.com/company/agco/
+23,A,Agilent Technologies,https://fortune.com/company/agilent-technologies/
+24,AGL,Agilon health,https://fortune.com/company/agilon-health/
+25,AGNC,AGNC Investment,https://fortune.com/company/agnc-investment/
+26,AGNT,AGNT,https://fortune.com/company/exp-world-holdings/
+27,AIG,AIG,https://fortune.com/company/aig/
+28,APD,Air Products & Chemicals,https://fortune.com/company/air-products-chemicals/
+29,ABNB,Airbnb,https://fortune.com/company/airbnb/
+30,AKAM,Akamai Technologies,https://fortune.com/company/akamai-technologies/
+31,ALK,Alaska Air Group,https://fortune.com/company/alaska-air-group/
+32,ALB,Albemarle,https://fortune.com/company/albemarle/
+33,ACI,Albertsons,https://fortune.com/company/albertsons-cos/
+34,AA,Alcoa,https://fortune.com/company/alcoa/
+35,ARE,Alexandria Real Estate Equities,https://fortune.com/company/alexandria-real-estate-equities/
+36,ALIT,Alight,https://fortune.com/company/alight/
+37,ALGN,Align Technology,https://fortune.com/company/align-technology/
+38,ALGT,Allegiant Travel,https://fortune.com/company/allegiant-travel/
+39,ARLP,Alliance Resource Partners,https://fortune.com/company/alliance-resource-partners/
+40,LNT,Alliant Energy,https://fortune.com/company/alliant-energy/
+41,ALSN,Allison Transmission Holdings,https://fortune.com/company/allison-transmission-holdings/
+42,ALL,Allstate,https://fortune.com/company/allstate/
+43,ALLY,Ally Financial,https://fortune.com/company/ally-financial/
+44,AMR,Alpha Metallurgical Resources,https://fortune.com/company/contura-energy/
+45,GOOGL,Alphabet,https://fortune.com/company/alphabet/
+46,MO,Altria Group,https://fortune.com/company/altria-group/
+47,AMZN,Amazon,https://fortune.com/company/amazon-com/
+48,AMC,AMC Entertainment Holdings,https://fortune.com/company/amc-entertainment-holdings/
+49,AMCX,AMC Networks,https://fortune.com/company/amc-networks/
+50,AEE,Ameren,https://fortune.com/company/ameren/
+51,AAL,American Airlines Group,https://fortune.com/company/american-airlines-group/
+52,AEO,American Eagle Outfitters,https://fortune.com/company/american-eagle-outfitters/
+53,AEP,American Electric Power,https://fortune.com/company/american-electric-power/
+54,AXP,American Express,https://fortune.com/company/american-express/
+55,,American Family Insurance Group,https://fortune.com/company/american-family-insurance-group/
+56,AFG,American Financial Group,https://fortune.com/company/american-financial-group/
+57,AEL,American National Group,https://fortune.com/company/american-equity-investment-life-holding/
+58,AMT,American Tower,https://fortune.com/company/american-tower/
+59,AWK,American Water Works,https://fortune.com/company/american-water-works/
+60,COLD,Americold Realty Trust,https://fortune.com/company/americold-realty-trust/
+61,AMP,Ameriprise Financial,https://fortune.com/company/ameriprise-financial/
+62,AME,Ametek,https://fortune.com/company/ametek/
+63,AMGN,Amgen,https://fortune.com/company/amgen/
+64,,Amica Mutual Insurance,https://fortune.com/company/amica-mutual-insurance/
+65,AMKR,Amkor Technology,https://fortune.com/company/amkor-technology/
+66,AMN,AMN Healthcare Services,https://fortune.com/company/amn-healthcare-services/
+67,APH,Amphenol,https://fortune.com/company/amphenol/
+68,ADI,Analog Devices,https://fortune.com/company/analog-devices/
+69,ANDE,Andersons,https://fortune.com/company/andersons/
+70,AR,Antero Resources,https://fortune.com/company/antero-resources/
+71,HOUS,Anywhere Real Estate,https://fortune.com/company/realogy-holdings/
+72,APA,APA,https://fortune.com/company/apache/
+73,APG,APi Group,https://fortune.com/company/api-group/
+74,APO,Apollo Global Management,https://fortune.com/company/apollo-global-management/
+75,AAPL,Apple,https://fortune.com/company/apple/
+76,AIT,Applied Industrial Technologies,https://fortune.com/company/applied-industrial-technologies/
+77,AMAT,Applied Materials,https://fortune.com/company/applied-materials/
+78,APP,AppLovin,https://fortune.com/company/applovin/
+79,ATR,AptarGroup,https://fortune.com/company/aptargroup/
+80,ARMK,Aramark,https://fortune.com/company/aramark/
+81,ARCB,ArcBest,https://fortune.com/company/arcbest/
+82,,Arch Resources,https://fortune.com/company/arch-coal/
+83,ADM,Archer Daniels Midland,https://fortune.com/company/archer-daniels-midland/
+84,ARES,Ares Management,https://fortune.com/company/ares-management/
+85,ANET,Arista Networks,https://fortune.com/company/arista-networks/
+86,ARKO,ARKO,https://fortune.com/company/arko/
+87,ARW,Arrow Electronics,https://fortune.com/company/arrow-electronics/
+88,AJG,Arthur J. Gallagher,https://fortune.com/company/arthur-j-gallagher/
+89,ABG,Asbury Automotive Group,https://fortune.com/company/asbury-automotive-group/
+90,AIZ,Assurant,https://fortune.com/company/assurant/
+91,T,AT&T,https://fortune.com/company/att/
+92,ATI,ATI,https://fortune.com/company/allegheny-technologies/
+93,ATKR,Atkore,https://fortune.com/company/atkore/
+94,TEAM,Atlassian,https://fortune.com/company/atlassian/
+95,ATO,Atmos Energy,https://fortune.com/company/atmos-energy/
+96,,Auto-Owners Insurance,https://fortune.com/company/auto-owners-insurance/
+97,ADSK,Autodesk,https://fortune.com/company/autodesk/
+98,ALV,Autoliv,https://fortune.com/company/autoliv/
+99,ADP,Automatic Data Processing,https://fortune.com/company/adp/
+100,AN,AutoNation,https://fortune.com/company/auto-nation/
+101,AZO,AutoZone,https://fortune.com/company/autozone/
+102,AVB,AvalonBay Communities,https://fortune.com/company/avalonbay-communities/
+103,AVTR,Avantor,https://fortune.com/company/avantor/
+104,AVY,Avery Dennison,https://fortune.com/company/avery-dennison/
+105,AVNT,Avient,https://fortune.com/company/polyone/
+106,CAR,Avis Budget Group,https://fortune.com/company/avis-budget-group/
+107,AVT,Avnet,https://fortune.com/company/avnet/
+108,BKR,Baker Hughes,https://fortune.com/company/baker-hughes/
+109,BALL,Ball,https://fortune.com/company/ball/
+110,BAC,Bank of America,https://fortune.com/company/bank-of-america-corp/
+111,BK,Bank of New York (BNY),https://fortune.com/company/bank-of-new-york-mellon-corp/
+112,BBWI,Bath & Body Works,https://fortune.com/company/l-brands/
+113,BAX,Baxter International,https://fortune.com/company/baxter-international/
+114,BDX,Becton Dickinson,https://fortune.com/company/becton-dickinson/
+115,BDC,Belden,https://fortune.com/company/belden/
+116,BHE,Benchmark Electronics,https://fortune.com/company/benchmark-electronics/
+117,BRK.A,Berkshire Hathaway,https://fortune.com/company/berkshire-hathaway/
+118,BERY,Berry Global Group,https://fortune.com/company/berry-global-group/
+119,BBY,Best Buy,https://fortune.com/company/best-buy/
+120,BIG,Big Lots,https://fortune.com/company/big-lots/
+121,BIO,Bio-Rad Laboratories,https://fortune.com/company/bio-rad-laboratories/
+122,BIIB,Biogen,https://fortune.com/company/biogen/
+123,BJ,BJ's Wholesale Club,https://fortune.com/company/bjs-wholesale-club/
+124,BLK,BlackRock,https://fortune.com/company/blackrock/
+125,BX,Blackstone,https://fortune.com/company/blackstone-group/
+126,XYZ,Block,https://fortune.com/company/square/
+127,BLMN,Bloomin' Brands,https://fortune.com/company/bloomin-brands/
+128,BXC,BlueLinx Holdings,https://fortune.com/company/bluelinx-holdings/
+129,BA,Boeing,https://fortune.com/company/boeing/
+130,BCC,Boise Cascade,https://fortune.com/company/boise-cascade/
+131,BOKF,BOK Financial,https://fortune.com/company/bok-financial/
+132,BKNG,Booking Holdings,https://fortune.com/company/booking-holdings/
+133,BAH,Booz Allen Hamilton Holding,https://fortune.com/company/booz-allen-hamilton/
+134,BWA,BorgWarner,https://fortune.com/company/borgwarner/
+135,BSX,Boston Scientific,https://fortune.com/company/boston-scientific/
+136,BYD,Boyd Gaming,https://fortune.com/company/boyd-gaming/
+137,BFH,Bread Financial Holdings,https://fortune.com/company/alliance-data-systems/
+138,BHF,Brighthouse Financial,https://fortune.com/company/brighthouse-financial/
+139,BTSG,BrightSpring Health Services,https://fortune.com/company/brightspring-health-services/
+140,BV,BrightView Holdings,https://fortune.com/company/brightview-holdings/
+141,BCO,Brink's,https://fortune.com/company/brinks/
+142,EAT,Brinker International,https://fortune.com/company/brinker-international/
+143,BMY,Bristol-Myers Squibb,https://fortune.com/company/bristol-myers-squibb/
+144,AVGO,Broadcom,https://fortune.com/company/broadcom/
+145,BR,Broadridge Financial Solutions,https://fortune.com/company/broadridge-financial-solutions/
+146,BKD,Brookdale Senior Living,https://fortune.com/company/brookdale-senior-living/
+147,BRO,Brown & Brown,https://fortune.com/company/brown-brown/
+148,BFB,Brown-Forman,https://fortune.com/company/brown-forman/
+149,BRKR,Bruker,https://fortune.com/company/bruker/
+150,BC,Brunswick,https://fortune.com/company/brunswick/
+151,BLDR,Builders FirstSource,https://fortune.com/company/builders-firstsource/
+152,BURL,Burlington Stores,https://fortune.com/company/burlington-stores/
+153,BWXT,BWX Technologies,https://fortune.com/company/bwx-technologies/
+154,BXP,BXP,https://fortune.com/company/boston-properties/
+155,CHRW,C.H. Robinson Worldwide,https://fortune.com/company/c-h-robinson-worldwide/
+156,CBT,Cabot,https://fortune.com/company/cabot/
+157,CACI,CACI International,https://fortune.com/company/caci-international/
+158,CDNS,Cadence Design Systems,https://fortune.com/company/cadence-design-systems/
+159,CZR,Caesars Entertainment,https://fortune.com/company/eldorado-resorts/
+160,CALM,Cal-Maine Foods,https://fortune.com/company/cal-maine-foods/
+161,CAL,Caleres,https://fortune.com/company/caleres/
+162,CRC,California Resources,https://fortune.com/company/california-resources/
+163,CALY,Callaway Golf,https://fortune.com/company/callaway-golf/
+164,CLMT,Calumet,https://fortune.com/company/calumet-specialty-products/
+165,CPB,Campbell's,https://fortune.com/company/campbell-soup/
+166,CWH,Camping World Holdings,https://fortune.com/company/camping-world-holdings/
+167,,Cano Health,https://fortune.com/company/cano-health/
+168,COF,Capital One Financial,https://fortune.com/company/capital-one-financial/
+169,CAH,Cardinal Health,https://fortune.com/company/cardinal-health/
+170,CSL,Carlisle,https://fortune.com/company/carlisle/
+171,CG,Carlyle Group,https://fortune.com/company/carlyle-group/
+172,KMX,CarMax,https://fortune.com/company/carmax/
+173,CRS,Carpenter Technology,https://fortune.com/company/carpenter-technology/
+174,CARR,Carrier Global,https://fortune.com/company/carrier-global/
+175,CRI,Carter's,https://fortune.com/company/carters/
+176,CVNA,Carvana,https://fortune.com/company/carvana/
+177,CASY,Casey's General Stores,https://fortune.com/company/caseys-general-stores/
+178,CTLT,Catalent,https://fortune.com/company/catalent/
+179,CAT,Caterpillar,https://fortune.com/company/caterpillar/
+180,CBOE,Cboe Global Markets,https://fortune.com/company/cboe-global-markets/
+181,CBRE,CBRE Group,https://fortune.com/company/cbre-group/
+182,CDW,CDW,https://fortune.com/company/cdw/
+183,CE,Celanese,https://fortune.com/company/celanese/
+184,COR,Cencora,https://fortune.com/company/amerisourcebergen/
+185,CNC,Centene,https://fortune.com/company/centene/
+186,CNP,CenterPoint Energy,https://fortune.com/company/centerpoint-energy/
+187,CENT,Central Garden & Pet,https://fortune.com/company/central-garden-pet/
+188,CCS,Century Communities,https://fortune.com/company/century-communities/
+189,CF,CF Industries Holdings,https://fortune.com/company/cf-industries-holdings/
+190,,ChampionX,https://fortune.com/company/championx/
+191,CRL,Charles River Laboratories Intl.,https://fortune.com/company/charles-river-laboratories-intl/
+192,SCHW,Charles Schwab,https://fortune.com/company/charles-schwab/
+193,GTLS,Chart Industries,https://fortune.com/company/chart-industries/
+194,CHTR,Charter Communications,https://fortune.com/company/charter-communications/
+195,CAKE,Cheesecake Factory,https://fortune.com/company/cheesecake-factory/
+196,CHEF,Chefs' Warehouse,https://fortune.com/company/chefs-warehouse/
+197,CC,Chemours,https://fortune.com/company/chemours/
+198,LNG,Cheniere Energy,https://fortune.com/company/cheniere-energy/
+199,CVX,Chevron,https://fortune.com/company/chevron/
+200,CHWY,Chewy,https://fortune.com/company/chewy/
+201,CMG,Chipotle Mexican Grill,https://fortune.com/company/chipotle-mexican-grill/
+202,CHRD,Chord Energy,https://fortune.com/company/oasis-petroleum/
+203,,CHS,https://fortune.com/company/chs/
+204,CHD,Church & Dwight,https://fortune.com/company/church-dwight/
+205,CIEN,Ciena,https://fortune.com/company/ciena/
+206,CI,Cigna Group,https://fortune.com/company/cigna/
+207,CINF,Cincinnati Financial,https://fortune.com/company/cincinnati-financial/
+208,CNK,Cinemark Holdings,https://fortune.com/company/cinemark-holdings/
+209,CTAS,Cintas,https://fortune.com/company/cintas/
+210,CSCO,Cisco Systems,https://fortune.com/company/cisco-systems-inc/
+211,C,Citigroup,https://fortune.com/company/citigroup/
+212,CFG,Citizens Financial Group,https://fortune.com/company/citizens-financial-group/
+213,CIVI,Civitas Resources,https://fortune.com/company/civitas-resources/
+214,CLH,Clean Harbors,https://fortune.com/company/clean-harbors/
+215,CCO,Clear Channel Outdoor Hldgs.,https://fortune.com/company/clear-channel-outdoor-holdings/
+216,CLF,Cleveland-Cliffs,https://fortune.com/company/cleveland-cliffs/
+217,CLX,Clorox,https://fortune.com/company/clorox/
+218,CME,CME Group,https://fortune.com/company/cme-group/
+219,CMS,CMS Energy,https://fortune.com/company/cms-energy/
+220,CNO,CNO Financial Group,https://fortune.com/company/cno-financial-group/
+221,CNX,CNX Resources,https://fortune.com/company/cnx-resources/
+222,KO,Coca-Cola,https://fortune.com/company/coca-cola/
+223,COKE,Coca-Cola Consolidated,https://fortune.com/company/coca-cola-bottling/
+224,CTSH,Cognizant Technology Solutions,https://fortune.com/company/cognizant-technology-solutions/
+225,COHR,Coherent,https://fortune.com/company/ii-vi/
+226,COIN,Coinbase Global,https://fortune.com/company/coinbase/
+227,CL,Colgate-Palmolive,https://fortune.com/company/colgate-palmolive/
+228,COLB,Columbia Banking System,https://fortune.com/company/columbia-banking-system/
+229,COLM,Columbia Sportswear,https://fortune.com/company/columbia-sportswear/
+230,CMCSA,Comcast,https://fortune.com/company/comcast/
+231,,Comerica,https://fortune.com/company/comerica/
+232,FIX,Comfort Systems USA,https://fortune.com/company/comfort-systems-usa/
+233,CMC,Commercial Metals,https://fortune.com/company/commercial-metals/
+234,CYH,Community Health Systems,https://fortune.com/company/community-health-systems/
+235,COMP,Compass,https://fortune.com/company/compass/
+236,CAG,Conagra Brands,https://fortune.com/company/conagra-brands/
+237,CNXC,Concentrix,https://fortune.com/company/concentrix/
+238,CNDT,Conduent,https://fortune.com/company/conduent/
+239,COP,ConocoPhillips,https://fortune.com/company/conocophillips/
+240,ED,Consolidated Edison,https://fortune.com/company/consolidated-edison/
+241,STZ,Constellation Brands,https://fortune.com/company/constellation-brands/
+242,CEG,Constellation Energy,https://fortune.com/company/constellation-energy/
+243,CLR,Continental Resources,https://fortune.com/company/continental-resources/
+244,COO,Cooper Cos.,https://fortune.com/company/cooper-cos/
+245,CPS,Cooper-Standard Holdings,https://fortune.com/company/cooper-standard-holdings/
+246,CPRT,Copart,https://fortune.com/company/copart/
+247,CNM,Core & Main,https://fortune.com/company/core-main/
+248,CNR,Core Natural Resources,https://fortune.com/company/consol-energy/
+249,,Cornerstone Building Brands,https://fortune.com/company/nci-building-systems/
+250,GLW,Corning,https://fortune.com/company/corning/
+251,CPAY,Corpay,https://fortune.com/company/fleetcor-technologies/
+252,CTVA,Corteva,https://fortune.com/company/corteva/
+253,COST,Costco Wholesale,https://fortune.com/company/costco/
+254,CTRA,Coterra Energy,https://fortune.com/company/coterra-energy/
+255,COTY,Coty,https://fortune.com/company/coty/
+256,,Country Financial,https://fortune.com/company/country-financial/
+257,CPNG,Coupang,https://fortune.com/company/coupang/
+258,CBRL,Cracker Barrel Old Country Store,https://fortune.com/company/cracker-barrel-old-country-store/
+259,CROX,Crocs,https://fortune.com/company/crocs/
+260,CAPL,CrossAmerica Partners,https://fortune.com/company/crossamerica-partners/
+261,CRWD,CrowdStrike Holdings,https://fortune.com/company/crowdstrike/
+262,CCI,Crown Castle,https://fortune.com/company/crown-castle-international/
+263,CCK,Crown Holdings,https://fortune.com/company/crown-holdings/
+264,CSX,CSX,https://fortune.com/company/csx/
+265,CFR,Cullen/Frost Bankers,https://fortune.com/company/cullen-frost-bankers/
+266,CMI,Cummins,https://fortune.com/company/cummins/
+267,,CUNA Mutual Group,https://fortune.com/company/cuna-mutual-group/
+268,CW,Curtiss-Wright,https://fortune.com/company/curtiss-wright/
+269,CVS,CVS Health,https://fortune.com/company/cvs-health/
+270,DHI,D.R. Horton,https://fortune.com/company/d-r-horton/
+271,DAN,Dana,https://fortune.com/company/dana/
+272,DHR,Danaher,https://fortune.com/company/danaher/
+273,DRI,Darden Restaurants,https://fortune.com/company/darden-restaurants/
+274,DAR,Darling Ingredients,https://fortune.com/company/darling-ingredients/
+275,DCH,Dauch,https://fortune.com/company/american-axle-manufacturing/
+276,DVA,DaVita,https://fortune.com/company/davita/
+277,DECK,Deckers Outdoor,https://fortune.com/company/deckers-outdoor/
+278,DE,Deere,https://fortune.com/company/deere/
+279,DK,Delek US Holdings,https://fortune.com/company/delek-us-holdings/
+280,DELL,Dell Technologies,https://fortune.com/company/dell-technologies/
+281,DAL,Delta Air Lines,https://fortune.com/company/delta-air-lines/
+282,XRAY,Dentsply Sirona,https://fortune.com/company/dentsply-sirona/
+283,DBI,Designer Brands,https://fortune.com/company/dsw/
+284,DVN,Devon Energy,https://fortune.com/company/devon-energy/
+285,DXCM,DexCom,https://fortune.com/company/dexcom/
+286,FANG,Diamondback Energy,https://fortune.com/company/diamondback-energy/
+287,DKS,Dick's Sporting Goods,https://fortune.com/company/dicks-sporting-goods/
+288,DBD,Diebold Nixdorf,https://fortune.com/company/diebold-nixdorf/
+289,DLR,Digital Realty Trust,https://fortune.com/company/digital-realty-trust/
+290,DDS,Dillard's,https://fortune.com/company/dillards/
+291,,Discover,https://fortune.com/company/discover-financial-services/
+292,DOCU,DocuSign,https://fortune.com/company/docusign/
+293,DG,Dollar General,https://fortune.com/company/dollar-general/
+294,DLTR,Dollar Tree,https://fortune.com/company/dollar-tree/
+295,D,Dominion Energy,https://fortune.com/company/dominion-resources/
+296,DPZ,Domino's Pizza,https://fortune.com/company/dominos-pizza/
+297,,Domtar,https://fortune.com/company/domtar/
+298,DCI,Donaldson,https://fortune.com/company/donaldson/
+299,DASH,DoorDash,https://fortune.com/company/doordash/
+300,DOV,Dover,https://fortune.com/company/dover/
+301,DOW,Dow,https://fortune.com/company/dow/
+302,DKNG,DraftKings,https://fortune.com/company/draftkings/
+303,DFH,Dream Finders Homes,https://fortune.com/company/dream-finders-homes/
+304,DBX,Dropbox,https://fortune.com/company/dropbox/
+305,DTE,DTE Energy,https://fortune.com/company/dte-energy/
+306,DUK,Duke Energy,https://fortune.com/company/duke-energy/
+307,DD,DuPont,https://fortune.com/company/dow-chemical/
+308,DXC,DXC Technology,https://fortune.com/company/dxc-technology/
+309,DY,Dycom Industries,https://fortune.com/company/dycom-industries/
+310,EWBC,East West Bancorp,https://fortune.com/company/east-west-bancorp/
+311,EMN,Eastman Chemical,https://fortune.com/company/eastman-chemical/
+312,EBAY,Ebay,https://fortune.com/company/ebay/
+313,SATS,EchoStar,https://fortune.com/company/echostar/
+314,ECL,Ecolab,https://fortune.com/company/ecolab/
+315,EIX,Edison International,https://fortune.com/company/edison-international/
+316,EW,Edwards Lifesciences,https://fortune.com/company/edwards-lifesciences/
+317,ELAN,Elanco Animal Health,https://fortune.com/company/elanco-animal-health/
+318,EA,Electronic Arts,https://fortune.com/company/electronic-arts/
+319,ELV,Elevance Health,https://fortune.com/company/elevance-health/
+320,LLY,Eli Lilly,https://fortune.com/company/eli-lilly/
+321,EME,EMCOR Group,https://fortune.com/company/emcor-group/
+322,EMR,Emerson Electric,https://fortune.com/company/emerson-electric/
+323,EHC,Encompass Health,https://fortune.com/company/healthsouth/
+324,,Encore Wire,https://fortune.com/company/encore-wire/
+325,,Endeavor Group Holdings,https://fortune.com/company/endeavor-group-holdings/
+326,ENR,Energizer Holdings,https://fortune.com/company/energizer-holdings/
+327,ET,Energy Transfer,https://fortune.com/company/energy-transfer-equity/
+328,ENS,EnerSys,https://fortune.com/company/enersys/
+329,ENLC,EnLink Midstream,https://fortune.com/company/enlink-midstream/
+330,ENSG,Ensign Group,https://fortune.com/company/ensign-group/
+331,ENTG,Entegris,https://fortune.com/company/entegris/
+332,ETR,Entergy,https://fortune.com/company/entergy/
+333,EPD,Enterprise Products Partners,https://fortune.com/company/enterprise-products-partners/
+334,NVST,Envista Holdings,https://fortune.com/company/envista-holdings/
+335,EOG,EOG Resources,https://fortune.com/company/eog-resources/
+336,EPAM,EPAM Systems,https://fortune.com/company/epam-systems/
+337,EQT,EQT,https://fortune.com/company/eqt/
+338,EFX,Equifax,https://fortune.com/company/equifax/
+339,EQIX,Equinix,https://fortune.com/company/equinix/
+340,EQH,Equitable Holdings,https://fortune.com/company/equitable-holdings/
+341,EQR,Equity Residential,https://fortune.com/company/equity-residential/
+342,,Erie Insurance Group,https://fortune.com/company/erie-insurance-group/
+343,ESAB,ESAB,https://fortune.com/company/esab/
+344,EL,Estée Lauder,https://fortune.com/company/estee-lauder/
+345,ETSY,Etsy,https://fortune.com/company/etsy/
+346,EEFT,Euronet Worldwide,https://fortune.com/company/euronet-worldwide/
+347,EFOR,Everforth,https://fortune.com/company/asgn/
+348,EVRG,Evergy,https://fortune.com/company/westar-energy/
+349,PSTG,Everpure,https://fortune.com/company/pure-storage/
+350,ES,Eversource Energy,https://fortune.com/company/eversource-energy/
+351,EXAS,Exact Sciences,https://fortune.com/company/exact-sciences-corp/
+352,EXC,Exelon,https://fortune.com/company/exelon/
+353,EXE,Expand Energy,https://fortune.com/company/chesapeake-energy/
+354,EXPE,Expedia Group,https://fortune.com/company/expedia-group/
+355,EXPD,Expeditors Intl. of Washington,https://fortune.com/company/expeditors-intl-of-washington/
+356,EXR,Extra Space Storage,https://fortune.com/company/extra-space-storage/
+357,XOM,Exxon Mobil,https://fortune.com/company/exxon-mobil/
+358,FFIV,F5,https://fortune.com/company/f5-networks/
+359,FNMA,Fannie Mae,https://fortune.com/company/fannie-mae/
+360,,Farmers Insurance Exchange,https://fortune.com/company/farmers-insurance-exchange/
+361,FAST,Fastenal,https://fortune.com/company/fastenal/
+362,,Federated Mutual Insurance,https://fortune.com/company/federated-mutual-insurance/
+363,FDX,FedEx,https://fortune.com/company/fedex/
+364,FNF,Fidelity National Financial,https://fortune.com/company/fidelity-national-financial/
+365,FIS,Fidelity National Information (FIS),https://fortune.com/company/fidelity-national-information-services/
+366,FITB,Fifth Third Bancorp,https://fortune.com/company/fifth-third-bancorp/
+367,FAF,First American Financial,https://fortune.com/company/first-american-financial/
+368,FCNCA,First Citizens BancShares,https://fortune.com/company/first-citizens-bancshares/
+369,FHN,First Horizon,https://fortune.com/company/first-horizon-national-corp/
+370,FINN,First National of Nebraska,https://fortune.com/company/first-national-of-nebraska-inc/
+371,FSLR,First Solar,https://fortune.com/company/first-solar/
+372,FCFS,FirstCash Holdings,https://fortune.com/company/firstcash-holdings/
+373,FE,FirstEnergy,https://fortune.com/company/firstenergy/
+374,FISV,Fiserv,https://fortune.com/company/fiserv/
+375,FIVE,Five Below,https://fortune.com/company/five-below/
+376,FLG,Flagstar Bank,https://fortune.com/company/new-york-community-bancorp/
+377,FND,Floor & Decor Holdings,https://fortune.com/company/floor-decor-holdings/
+378,FLO,Flowers Foods,https://fortune.com/company/flowers-foods/
+379,FLS,Flowserve,https://fortune.com/company/flowserve/
+380,FLR,Fluor,https://fortune.com/company/fluor/
+381,,FM,https://fortune.com/company/fm-global/
+382,FMC,FMC,https://fortune.com/company/fmc/
+383,,Foot Locker,https://fortune.com/company/foot-locker/
+384,F,Ford Motor,https://fortune.com/company/ford-motor/
+385,FTNT,Fortinet,https://fortune.com/company/fortinet/
+386,FTV,Fortive,https://fortune.com/company/fortive/
+387,FBIN,Fortune Brands Innovations,https://fortune.com/company/fortune-brands-home-security/
+388,FOXA,Fox,https://fortune.com/company/fox/
+389,BEN,Franklin Resources,https://fortune.com/company/franklin-resources/
+390,FMCC,Freddie Mac,https://fortune.com/company/freddie-mac/
+391,FCX,Freeport-McMoRan,https://fortune.com/company/freeport-mcmoran/
+392,,Frontier Communications,https://fortune.com/company/frontier-communications/
+393,ULCC,Frontier Group Holdings,https://fortune.com/company/frontier-group-holdings/
+394,FCN,FTI Consulting,https://fortune.com/company/fti-consulting/
+395,GIII,G-III Apparel Group,https://fortune.com/company/g-iii-apparel-group/
+396,GME,GameStop,https://fortune.com/company/gamestop/
+397,GAP,Gap,https://fortune.com/company/gap/
+398,GTX,Garrett Motion,https://fortune.com/company/garrett-motion/
+399,IT,Gartner,https://fortune.com/company/gartner/
+400,GE,GE Aerospace,https://fortune.com/company/general-electric/
+401,GEHC,GE HealthCare Technologies,https://fortune.com/company/ge-healthcare-technologies/
+402,GEN,Gen Digital,https://fortune.com/company/symantec/
+403,GNRC,Generac Holdings,https://fortune.com/company/generac-holdings/
+404,GD,General Dynamics,https://fortune.com/company/general-dynamics/
+405,GIS,General Mills,https://fortune.com/company/general-mills/
+406,GM,General Motors,https://fortune.com/company/general-motors/
+407,GEL,Genesis Energy,https://fortune.com/company/genesis-energy/
+408,GPC,Genuine Parts,https://fortune.com/company/genuine-parts/
+409,GNW,Genworth Financial,https://fortune.com/company/genworth-financial/
+410,GILD,Gilead Sciences,https://fortune.com/company/gilead-sciences/
+411,GLP,Global Partners,https://fortune.com/company/global-partners/
+412,GPN,Global Payments,https://fortune.com/company/global-payments/
+413,GL,Globe Life,https://fortune.com/company/torchmark/
+414,,GMS,https://fortune.com/company/gms/
+415,GDDY,GoDaddy,https://fortune.com/company/godaddy/
+416,GOLD,Gold.com,https://fortune.com/company/a-mark-precious-metals/
+417,GS,Goldman Sachs Group,https://fortune.com/company/goldman-sachs-group/
+418,GT,Goodyear Tire & Rubber,https://fortune.com/company/goodyear-tire-rubber/
+419,GHC,Graham Holdings,https://fortune.com/company/graham-holdings/
+420,GVA,Granite Construction,https://fortune.com/company/granite-construction/
+421,GPK,Graphic Packaging Holding,https://fortune.com/company/graphic-packaging-holding/
+422,GTN,Gray Media,https://fortune.com/company/gray-television/
+423,,Graybar Electric,https://fortune.com/company/graybar-electric/
+424,GPRE,Green Plains,https://fortune.com/company/green-plains/
+425,GBX,Greenbrier,https://fortune.com/company/greenbrier-cos/
+426,GEF,Greif,https://fortune.com/company/greif/
+427,GFF,Griffon,https://fortune.com/company/griffon/
+428,GO,Grocery Outlet Holding,https://fortune.com/company/grocery-outlet-holding/
+429,GPI,Group 1 Automotive,https://fortune.com/company/group-1-automotive/
+430,,Guardian Life Ins. Co. of America,https://fortune.com/company/guardian-life-ins-co-of-america/
+431,,Guess,https://fortune.com/company/guess/
+432,GXO,GXO Logistics,https://fortune.com/company/gxo-logistics/
+433,FUL,H.B. Fuller,https://fortune.com/company/h-b-fuller/
+434,HRB,H&R Block,https://fortune.com/company/hr-block/
+435,HAL,Halliburton,https://fortune.com/company/halliburton/
+436,,Hanesbrands,https://fortune.com/company/hanesbrands/
+437,THG,Hanover Insurance Group,https://fortune.com/company/hanover-insurance-group/
+438,HOG,Harley-Davidson,https://fortune.com/company/harley-davidson/
+439,HIG,Hartford Insurance Group,https://fortune.com/company/hartford-financial-services/
+440,HAS,Hasbro,https://fortune.com/company/hasbro/
+441,HE,Hawaiian Electric Industries,https://fortune.com/company/hawaiian-electric-industries/
+442,HA,Hawaiian Holdings,https://fortune.com/company/hawaiian-holdings/
+443,HCA,HCA Healthcare,https://fortune.com/company/hca-holdings/
+444,HEI,HEICO,https://fortune.com/company/heico/
+445,HP,Helmerich & Payne,https://fortune.com/company/helmerich-payne/
+446,HSIC,Henry Schein,https://fortune.com/company/henry-schein/
+447,HRI,Herc Holdings,https://fortune.com/company/herc-holdings/
+448,HSY,Hershey,https://fortune.com/company/hershey/
+449,HTZ,Hertz Global Holdings,https://fortune.com/company/hertz-global-holdings/
+450,,Hess,https://fortune.com/company/hess/
+451,HPE,Hewlett Packard Enterprise,https://fortune.com/company/hewlett-packard-enterprise/
+452,DINO,HF Sinclair,https://fortune.com/company/hollyfrontier/
+453,,Hillenbrand,https://fortune.com/company/hillenbrand/
+454,HGV,Hilton Grand Vacations,https://fortune.com/company/hilton-grand-vacations/
+455,HLT,Hilton Worldwide Holdings,https://fortune.com/company/hilton-worldwide-holdings/
+456,HOLX,Hologic,https://fortune.com/company/hologic/
+457,HD,Home Depot,https://fortune.com/company/home-depot/
+458,HON,Honeywell International,https://fortune.com/company/honeywell-international/
+459,HRL,Hormel Foods,https://fortune.com/company/hormel-foods/
+460,HST,Host Hotels & Resorts,https://fortune.com/company/host-hotels-resorts/
+461,HOV,Hovnanian Enterprises,https://fortune.com/company/hovnanian-enterprises/
+462,HWM,Howmet Aerospace,https://fortune.com/company/arconic/
+463,HPQ,HP,https://fortune.com/company/hp/
+464,HUBG,Hub Group,https://fortune.com/company/hub-group/
+465,HUBB,Hubbell,https://fortune.com/company/hubbell/
+466,HUM,Humana,https://fortune.com/company/humana/
+467,HBAN,Huntington Bancshares,https://fortune.com/company/huntington-bancshares/
+468,HII,Huntington Ingalls Industries,https://fortune.com/company/huntington-ingalls-industries/
+469,HUN,Huntsman,https://fortune.com/company/huntsman/
+470,H,Hyatt Hotels,https://fortune.com/company/hyatt-hotels/
+471,HY,Hyster-Yale,https://fortune.com/company/hyster-yale-materials-handling/
+472,IBM,IBM,https://fortune.com/company/ibm/
+473,IEP,Icahn Enterprises,https://fortune.com/company/icahn-enterprises/
+474,IEX,IDEX,https://fortune.com/company/idex/
+475,IDXX,IDEXX Laboratories,https://fortune.com/company/idexx-laboratories/
+476,IHRT,iHeartMedia,https://fortune.com/company/iheartmedia/
+477,ITW,Illinois Tool Works,https://fortune.com/company/illinois-tool-works/
+478,ILMN,Illumina,https://fortune.com/company/illumina/
+479,INCY,Incyte,https://fortune.com/company/incyte/
+480,IR,Ingersoll Rand,https://fortune.com/company/gardner-denver/
+481,IMKTA,Ingles Markets,https://fortune.com/company/ingles-markets/
+482,INGR,Ingredion,https://fortune.com/company/ingredion/
+483,NSIT,Insight Enterprises,https://fortune.com/company/insight-enterprises/
+484,NSP,Insperity,https://fortune.com/company/insperity/
+485,CART,Instacart,https://fortune.com/company/instacart/
+486,IBP,Installed Building Products,https://fortune.com/company/installed-building-products/
+487,INTC,Intel,https://fortune.com/company/intel/
+488,IBKR,Interactive Brokers Group,https://fortune.com/company/interactive-brokers-group/
+489,ICE,Intercontinental Exchange,https://fortune.com/company/intercontinental-exchange/
+490,IFF,International Flavors & Fragrances,https://fortune.com/company/international-flavors-fragrances/
+491,IP,International Paper,https://fortune.com/company/international-paper/
+492,IPG,Interpublic Group,https://fortune.com/company/interpublic-group/
+493,INTU,Intuit,https://fortune.com/company/intuit/
+494,ISRG,Intuitive Surgical,https://fortune.com/company/intuitive-surgical/
+495,IQV,IQVIA Holdings,https://fortune.com/company/quintiles-ims-holdings/
+496,IRM,Iron Mountain,https://fortune.com/company/iron-mountain/
+497,ITT,ITT,https://fortune.com/company/itt/
+498,JBHT,J.B. Hunt Transport Services,https://fortune.com/company/j-b-hunt-transport-services/
+499,SJM,J.M. Smucker,https://fortune.com/company/j-m-smucker/
+500,JBL,Jabil,https://fortune.com/company/jabil-circuit/

@@ -1,8 +1,10 @@
+
+.DS_Store
 .env
+.mypy_cache/
+.pytest_cache/
 .venv/
 __pycache__/
-.pytest_cache/
-.mypy_cache/
-dist/
 build/
-
+dist/
+logs/

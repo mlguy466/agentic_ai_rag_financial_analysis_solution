@@ -1,0 +1,84 @@
+rank,ticker,company,fortune_url
+411,GLP,Global Partners,https://fortune.com/company/global-partners/
+412,GPN,Global Payments,https://fortune.com/company/global-payments/
+413,GL,Globe Life,https://fortune.com/company/torchmark/
+415,GDDY,GoDaddy,https://fortune.com/company/godaddy/
+416,GOLD,Gold.com,https://fortune.com/company/a-mark-precious-metals/
+417,GS,Goldman Sachs Group,https://fortune.com/company/goldman-sachs-group/
+418,GT,Goodyear Tire & Rubber,https://fortune.com/company/goodyear-tire-rubber/
+419,GHC,Graham Holdings,https://fortune.com/company/graham-holdings/
+420,GVA,Granite Construction,https://fortune.com/company/granite-construction/
+421,GPK,Graphic Packaging Holding,https://fortune.com/company/graphic-packaging-holding/
+422,GTN,Gray Media,https://fortune.com/company/gray-television/
+424,GPRE,Green Plains,https://fortune.com/company/green-plains/
+425,GBX,Greenbrier,https://fortune.com/company/greenbrier-cos/
+426,GEF,Greif,https://fortune.com/company/greif/
+427,GFF,Griffon,https://fortune.com/company/griffon/
+428,GO,Grocery Outlet Holding,https://fortune.com/company/grocery-outlet-holding/
+429,GPI,Group 1 Automotive,https://fortune.com/company/group-1-automotive/
+432,GXO,GXO Logistics,https://fortune.com/company/gxo-logistics/
+433,FUL,H.B. Fuller,https://fortune.com/company/h-b-fuller/
+434,HRB,H&R Block,https://fortune.com/company/hr-block/
+435,HAL,Halliburton,https://fortune.com/company/halliburton/
+437,THG,Hanover Insurance Group,https://fortune.com/company/hanover-insurance-group/
+438,HOG,Harley-Davidson,https://fortune.com/company/harley-davidson/
+439,HIG,Hartford Insurance Group,https://fortune.com/company/hartford-financial-services/
+440,HAS,Hasbro,https://fortune.com/company/hasbro/
+441,HE,Hawaiian Electric Industries,https://fortune.com/company/hawaiian-electric-industries/
+442,HA,Hawaiian Holdings,https://fortune.com/company/hawaiian-holdings/
+443,HCA,HCA Healthcare,https://fortune.com/company/hca-holdings/
+444,HEI,HEICO,https://fortune.com/company/heico/
+445,HP,Helmerich & Payne,https://fortune.com/company/helmerich-payne/
+446,HSIC,Henry Schein,https://fortune.com/company/henry-schein/
+447,HRI,Herc Holdings,https://fortune.com/company/herc-holdings/
+448,HSY,Hershey,https://fortune.com/company/hershey/
+449,HTZ,Hertz Global Holdings,https://fortune.com/company/hertz-global-holdings/
+451,HPE,Hewlett Packard Enterprise,https://fortune.com/company/hewlett-packard-enterprise/
+452,DINO,HF Sinclair,https://fortune.com/company/hollyfrontier/
+454,HGV,Hilton Grand Vacations,https://fortune.com/company/hilton-grand-vacations/
+455,HLT,Hilton Worldwide Holdings,https://fortune.com/company/hilton-worldwide-holdings/
+456,HOLX,Hologic,https://fortune.com/company/hologic/
+457,HD,Home Depot,https://fortune.com/company/home-depot/
+458,HON,Honeywell International,https://fortune.com/company/honeywell-international/
+459,HRL,Hormel Foods,https://fortune.com/company/hormel-foods/
+460,HST,Host Hotels & Resorts,https://fortune.com/company/host-hotels-resorts/
+461,HOV,Hovnanian Enterprises,https://fortune.com/company/hovnanian-enterprises/
+462,HWM,Howmet Aerospace,https://fortune.com/company/arconic/
+463,HPQ,HP,https://fortune.com/company/hp/
+464,HUBG,Hub Group,https://fortune.com/company/hub-group/
+465,HUBB,Hubbell,https://fortune.com/company/hubbell/
+466,HUM,Humana,https://fortune.com/company/humana/
+467,HBAN,Huntington Bancshares,https://fortune.com/company/huntington-bancshares/
+468,HII,Huntington Ingalls Industries,https://fortune.com/company/huntington-ingalls-industries/
+469,HUN,Huntsman,https://fortune.com/company/huntsman/
+470,H,Hyatt Hotels,https://fortune.com/company/hyatt-hotels/
+471,HY,Hyster-Yale,https://fortune.com/company/hyster-yale-materials-handling/
+472,IBM,IBM,https://fortune.com/company/ibm/
+473,IEP,Icahn Enterprises,https://fortune.com/company/icahn-enterprises/
+474,IEX,IDEX,https://fortune.com/company/idex/
+475,IDXX,IDEXX Laboratories,https://fortune.com/company/idexx-laboratories/
+476,IHRT,iHeartMedia,https://fortune.com/company/iheartmedia/
+477,ITW,Illinois Tool Works,https://fortune.com/company/illinois-tool-works/
+478,ILMN,Illumina,https://fortune.com/company/illumina/
+479,INCY,Incyte,https://fortune.com/company/incyte/
+480,IR,Ingersoll Rand,https://fortune.com/company/gardner-denver/
+481,IMKTA,Ingles Markets,https://fortune.com/company/ingles-markets/
+482,INGR,Ingredion,https://fortune.com/company/ingredion/
+483,NSIT,Insight Enterprises,https://fortune.com/company/insight-enterprises/
+484,NSP,Insperity,https://fortune.com/company/insperity/
+485,CART,Instacart,https://fortune.com/company/instacart/
+486,IBP,Installed Building Products,https://fortune.com/company/installed-building-products/
+487,INTC,Intel,https://fortune.com/company/intel/
+488,IBKR,Interactive Brokers Group,https://fortune.com/company/interactive-brokers-group/
+489,ICE,Intercontinental Exchange,https://fortune.com/company/intercontinental-exchange/
+490,IFF,International Flavors & Fragrances,https://fortune.com/company/international-flavors-fragrances/
+491,IP,International Paper,https://fortune.com/company/international-paper/
+492,IPG,Interpublic Group,https://fortune.com/company/interpublic-group/
+493,INTU,Intuit,https://fortune.com/company/intuit/
+494,ISRG,Intuitive Surgical,https://fortune.com/company/intuitive-surgical/
+495,IQV,IQVIA Holdings,https://fortune.com/company/quintiles-ims-holdings/
+496,IRM,Iron Mountain,https://fortune.com/company/iron-mountain/
+497,ITT,ITT,https://fortune.com/company/itt/
+498,JBHT,J.B. Hunt Transport Services,https://fortune.com/company/j-b-hunt-transport-services/
+499,SJM,J.M. Smucker,https://fortune.com/company/j-m-smucker/
+500,JBL,Jabil,https://fortune.com/company/jabil-circuit/
